@@ -19,6 +19,7 @@ public class Main {
                 House house = (House) asset;
                 System.out.println("Address: " + house.getAddress());
                 System.out.println("Current Value: $" + house.getValue());
+                System.out.println(house.getCondition());
             } else if (asset instanceof Vehicle) {
                 Vehicle vehicle = (Vehicle) asset;
                 System.out.println("Year: " + vehicle.getYear());

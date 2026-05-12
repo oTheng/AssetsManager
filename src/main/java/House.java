@@ -1,4 +1,4 @@
-import java.util.List;
+import org.w3c.dom.ls.LSOutput;
 
 public class House extends Asset {
     private String address;
@@ -25,9 +25,17 @@ public class House extends Asset {
     }
 
     public int getCondition() {
+        if (condition == 1) {
+            System.out.println("Condition: Excellent");
+        } else if (condition == 2) {
+            System.out.println("Condition: Good");
+        } else if (condition == 3) {
+            System.out.println("Condition: Fair");
+        } else if (condition == 4) {
+            System.out.println("Condition: Poor");
+        }
         return condition;
     }
-
     public void setCondition(int condition) {
         this.condition = condition;
     }
