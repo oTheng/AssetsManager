@@ -1,16 +1,19 @@
+import java.util.List;
+
 public class House extends Asset {
     private String address;
-    private int[] condition;
+    private int condition;
     private int squareFoot;
     private int lotSize;
 
     public House(String description, String dateAcquried,
-                 double orginialCost, String address, int[] condition, int squareFoot, int lotSize) {
+                 double orginialCost, String address, int condition, int squareFoot, int lotSize) {
         super(description, dateAcquried, orginialCost);
         this.address = address;
         this.lotSize = lotSize;
         this.condition = condition;
     }
+
 
     public String getAddress() {
         return address;
@@ -20,11 +23,11 @@ public class House extends Asset {
         this.address = address;
     }
 
-    public int[] getCondition() {
+    public int getCondition() {
         return condition;
     }
 
-    public void setCondition(int[] condition) {
+    public void setCondition(int condition) {
         this.condition = condition;
     }
 
@@ -44,8 +47,18 @@ public class House extends Asset {
         this.lotSize = lotSize;
     }
     @Override
-    public double getValue(){
-
-        return getOrginialCost();
+    public double getValue() {
+        double pricePerSquareFoot = 0;
+        double lotSize = .25;
+        if (condition == 1) {
+            pricePerSquareFoot = 180;
+        } else if (condition == 2) {
+            pricePerSquareFoot = 130;
+        } else if (condition == 3) {
+            pricePerSquareFoot = 90;
+        } else if (condition == 4) {
+            pricePerSquareFoot = 80;
+        }
+        return (squareFoot * pricePerSquareFoot) + (squareFoot * lotSize);
     }
 }

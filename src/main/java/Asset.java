@@ -1,13 +1,15 @@
 public class Asset {
     private String description;
     private String dateAcquried;
-    private double orginialCost;
+    private double originalCost;
 
     public Asset(String description, String dateAcquried, double orginialCost) {
         this.description = description;
         this.dateAcquried = dateAcquried;
-        this.orginialCost = orginialCost;
+        this.originalCost = orginialCost;
     }
+
+
 
     public String getDescription() {
         return description;
@@ -25,15 +27,15 @@ public class Asset {
         this.dateAcquried = dateAcquried;
     }
 
-    public double getOrginialCost() {
-        return orginialCost;
+    public double getOriginalCost() {
+        return originalCost;
     }
 
-    public void setOrginialCost(double orginialCost) {
-        this.orginialCost = orginialCost;
+    public void setOriginalCost(double orginialCost) {
+        this.originalCost = orginialCost;
     }
     public double getValue(){
 
-        return orginialCost;
+        return originalCost;
     }
 }
