@@ -1,4 +1,51 @@
-package PACKAGE_NAME;
+public class House extends Asset {
+    private String address;
+    private int[] condition;
+    private int squareFoot;
+    private int lotSize;
 
-public class House {
+    public House(String description, String dateAcquried,
+                 double orginialCost, String address, int[] condition, int squareFoot, int lotSize) {
+        super(description, dateAcquried, orginialCost);
+        this.address = address;
+        this.lotSize = lotSize;
+        this.condition = condition;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int[] getCondition() {
+        return condition;
+    }
+
+    public void setCondition(int[] condition) {
+        this.condition = condition;
+    }
+
+    public int getSquareFoot() {
+        return squareFoot;
+    }
+
+    public void setSquareFoot(int squareFoot) {
+        this.squareFoot = squareFoot;
+    }
+
+    public int getLotSize() {
+        return lotSize;
+    }
+
+    public void setLotSize(int lotSize) {
+        this.lotSize = lotSize;
+    }
+    @Override
+    public double getValue(){
+
+        return getOrginialCost();
+    }
 }
