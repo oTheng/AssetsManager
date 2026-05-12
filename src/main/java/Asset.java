@@ -1,11 +1,11 @@
 public class Asset {
     private String description;
-    private String dateAcquried;
+    private String dateAcquired;
     private double originalCost;
 
     public Asset(String description, String dateAcquried, double orginialCost) {
         this.description = description;
-        this.dateAcquried = dateAcquried;
+        this.dateAcquired = dateAcquried;
         this.originalCost = orginialCost;
     }
 
@@ -19,12 +19,12 @@ public class Asset {
         this.description = description;
     }
 
-    public String getDateAcquried() {
-        return dateAcquried;
+    public String getDateAcquired() {
+        return dateAcquired;
     }
 
-    public void setDateAcquried(String dateAcquried) {
-        this.dateAcquried = dateAcquried;
+    public void setDateAcquired(String dateAcquired) {
+        this.dateAcquired = dateAcquired;
     }
 
     public double getOriginalCost() {

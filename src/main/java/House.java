@@ -10,8 +10,9 @@ public class House extends Asset {
                  double orginialCost, String address, int condition, int squareFoot, int lotSize) {
         super(description, dateAcquried, orginialCost);
         this.address = address;
-        this.lotSize = lotSize;
         this.condition = condition;
+        this.squareFoot = squareFoot;
+        this.lotSize = lotSize;
     }
 
 
@@ -46,10 +47,11 @@ public class House extends Asset {
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
     }
+
     @Override
     public double getValue() {
         double pricePerSquareFoot = 0;
-        double lotSize = .25;
+
         if (condition == 1) {
             pricePerSquareFoot = 180;
         } else if (condition == 2) {
@@ -59,6 +61,10 @@ public class House extends Asset {
         } else if (condition == 4) {
             pricePerSquareFoot = 80;
         }
-        return (squareFoot * pricePerSquareFoot) + (squareFoot * lotSize);
+
+        double houseValue = this.squareFoot * pricePerSquareFoot;
+        double lotValue = this.lotSize * 0.25;
+
+        return houseValue + lotValue;
     }
 }
